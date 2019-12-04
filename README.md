@@ -8,7 +8,7 @@ PNGs to more OCR detectable format and then tesseract-ocr (needs to be installed
 If TS stream is set as input the script uses ccextractor (needs to be installed) to extract the
 subtitles into SPU (XML + PNGs) format first.
 
-This script has been tested with HD DVB subtitles used by the Finnish national broacast company YLE.
+This script has been tested with HD DVB subtitles used by the Finnish national broadcast company YLE.
 
 convert-TS-or-SPU-to-SRT.sh usage:
 * -i --input:    input file (could be a TS stream or SPU XML file) - mandatory
