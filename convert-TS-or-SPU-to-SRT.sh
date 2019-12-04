@@ -17,7 +17,7 @@ PATH=/usr/local/bin:/usr/bin:/bin:/sbin:/usr/sbin
 
 
 # Fine tune convert arguments if needed
-CONVERTSRGS="-trim -bordercolor black -border 50x5 -resize 300% -negate -alpha remove -background black"
+CONVERTASRGS="-trim -bordercolor black -border 50x5 -resize 300% -negate -alpha remove -background black"
 # Fine tune tesseract arguments if needed
 TESSERACTARGS=""
 # Fine tune ccextractor arguments if needed
@@ -31,7 +31,7 @@ PNGs to more OCR detectable format and then tesseract-ocr (needs to be installed
 If TS stream is set as input the script uses ccextractor (needs to be installed) to extract the
 subtitles into SPU (XML + PNGs) format first.
 
-This script has been tested with HD DVB subtitles used by the Finnish national broacast company YLE.
+This script has been tested with HD DVB subtitles used by the Finnish national broadcast company YLE.
 
 convert-TS-or-SPU-to-SRT.sh usage:
 -i --input:    input file (could be a TS stream or SPU XML file) - mandatory
@@ -286,10 +286,10 @@ while IFS= read -r l; do
 	dimg=$(basename "$img")
 	IFS=$SAVEIFS
 	if [ $VERBOSE -eq 0 ]; then
-		"$binconvert" "$INSUBDIR"/"$img" $CONVERTSRGS "$TMPPNGFILE" 2>/dev/null
+		"$binconvert" "$INSUBDIR"/"$img" $CONVERTASRGS "$TMPPNGFILE" 2>/dev/null
 	else
 		echo "Converting $img to more OCR detectable format"
-		"$binconvert" "$INSUBDIR"/"$img" $CONVERTSRGS "$TMPPNGFILE"
+		"$binconvert" "$INSUBDIR"/"$img" $CONVERTASRGS "$TMPPNGFILE"
 	fi
 	# Running OCR
 	if [ $VERBOSE -eq 1 ]; then
