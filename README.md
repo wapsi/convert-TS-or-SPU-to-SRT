@@ -33,7 +33,7 @@ Please note that I'm not responsible if this software does not work as it should
 You can fine tune tesseract, convert or ccextractor arguments by editing following lines at the beginning of the script:
 ```
 # Fine tune convert arguments if needed
-CONVERTSRGS="-trim -bordercolor black -border 50x5 -resize 300% -negate -alpha remove -background black"
+CONVERTARGS="-trim -bordercolor black -border 50x5 -resize 300% -negate -alpha remove -background black"
 # Fine tune tesseract arguments if needed
 TESSERACTARGS=""
 # Fine tune ccextractor arguments if needed
