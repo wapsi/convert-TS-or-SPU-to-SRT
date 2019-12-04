@@ -17,7 +17,7 @@ PATH=/usr/local/bin:/usr/bin:/bin:/sbin:/usr/sbin
 
 
 # Fine tune convert arguments if needed
-CONVERTASRGS="-trim -bordercolor black -border 50x5 -resize 300% -negate -alpha remove -background black"
+CONVERTARGS="-trim -bordercolor black -border 50x5 -resize 300% -negate -alpha remove -background black"
 # Fine tune tesseract arguments if needed
 TESSERACTARGS=""
 # Fine tune ccextractor arguments if needed
@@ -286,10 +286,10 @@ while IFS= read -r l; do
 	dimg=$(basename "$img")
 	IFS=$SAVEIFS
 	if [ $VERBOSE -eq 0 ]; then
-		"$binconvert" "$INSUBDIR"/"$img" $CONVERTASRGS "$TMPPNGFILE" 2>/dev/null
+		"$binconvert" "$INSUBDIR"/"$img" $CONVERTARGS "$TMPPNGFILE" 2>/dev/null
 	else
 		echo "Converting $img to more OCR detectable format"
-		"$binconvert" "$INSUBDIR"/"$img" $CONVERTASRGS "$TMPPNGFILE"
+		"$binconvert" "$INSUBDIR"/"$img" $CONVERTARGS "$TMPPNGFILE"
 	fi
 	# Running OCR
 	if [ $VERBOSE -eq 1 ]; then
